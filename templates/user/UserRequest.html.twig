@@ -1,0 +1,11 @@
+
+{% extends 'template.html.twig' %}
+
+{% block body %}
+    <h1>Demandez un rôle</h1>
+    Si vous n'avez toujours pas de site de production faite une demande : <a href="{{ path('app_productionSite') }}">ici</a>
+    {{ form_start(form) }}
+    
+    {{ form_end(form) }}
+
+{% endblock %}

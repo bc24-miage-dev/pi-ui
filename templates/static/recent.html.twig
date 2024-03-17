@@ -1,0 +1,31 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}
+    BC24-Produits dangereux
+{% endblock %}
+
+{% block body %}
+    <div id="banner">
+            <h1 class="text-center">Produits dangereux récemment détectés</h1>
+    </div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div class="row gtr-200">
+    {% for resource in resourcesC %}
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{ resource.resourceName.name }}</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">NFC : {{ resource.id }}</h6>
+            <p class="card-text">{{ resource.description }}</p>
+            <a href="{{ path('app_search_result', {'id': resource.id}) }}" class="card-link">Fiche du produit</a>
+        </div>
+    </div>
+    {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
